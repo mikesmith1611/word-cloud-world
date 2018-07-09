@@ -41,10 +41,13 @@ instructions = """
     - The color scale for the words. This is ignored if an RGB image mask is used.
 
 * Background
-    - The background color of the image. Blank will render a transparent background.
+    - The background color of the image. Blank will render a transparent background. Accepts HEX colors.
 
 * Image Mask
-    - The URL of a png/jpg used to draw the shape of the word cloud.
+    - The URL of a png/jpg used to draw the shape of the word cloud. If the image doesn't work try another!
+
+This app is powered by [amueller's word_cloud](https://github.com/amueller/word_cloud) see the API reference for more details.
+
 """
 
 def remove_html_tags(text):
