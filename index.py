@@ -7,7 +7,7 @@ from dash.dependencies import Output, Input, State
 from apps import wikipediaWordCloud, lyricsWordCloud, textFieldWordCloud, textUploadWordCloud, wordCloud
 from app import app
 from templates.wordcloud import footer
-
+server = app.server
 navbar = Div([
     Div(['Word Cloud World',
     ], className='navbar-brand'),
