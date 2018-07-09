@@ -1,1 +1,1 @@
-web: gunicorn index:server --log-level debug
+web: gunicorn index:server --preload --log-level debug
