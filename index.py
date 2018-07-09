@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('TkAgg')
+matplotlib.use('Agg')
 from dash_html_components import Div, Img, Button, H2, H1, P, Hr, A, Span, Label, Hr, Footer, Ul, Li, Meta
 import dash_core_components as dcc
 from dash.dependencies import Output, Input, State
