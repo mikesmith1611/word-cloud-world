@@ -33,7 +33,6 @@ app.layout = Div([
     Div(id='body')
 ])
 
-
 @app.callback(Output('body', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
