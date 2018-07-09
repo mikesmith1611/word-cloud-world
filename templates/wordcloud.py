@@ -19,6 +19,32 @@ instructions = """
 
 * Min Font Size
     - The minimum font size allowed in the word cloud.
+
+* Width
+    - The width of the image (does not apply when using Image Mask)
+
+* Height
+    - The height of the image (does not apply when using Image Mask)
+
+* Scale
+    - This is used to scale the size of the image (faster than a larger canvas but less accurate word placement)
+
+* Frq/Rnk
+    - This determined how the font size of the words scale with word frequency and word rank.
+    A value of 1 means that font size is scaled only by frequency. A value of zero means
+    that only the rank is considered.
+
+* Max words
+    - The maximum number of words to display
+
+* Color Scale
+    - The color scale for the words. This is ignored if an RGB image mask is used.
+
+* Background
+    - The background color of the image. Blank will render a transparent background.
+
+* Image Mask
+    - The URL of a png/jpg used to draw the shape of the word cloud.
 """
 
 def remove_html_tags(text):
