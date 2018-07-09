@@ -1,1 +1,1 @@
-web: gunicorn index:server --host www.wordcloudworld.com --preload --log-level debug
+web: gunicorn index:server --preload --log-level debug
