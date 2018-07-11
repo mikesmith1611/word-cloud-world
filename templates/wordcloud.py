@@ -226,7 +226,7 @@ def make_word_cloud(imagemaskurl, relative_scaling, nwords, text, title,
         Img(src=src, width=image.size[0], height=image.size[1],
             style={'max-width': '100%', 'height': 'auto',
                    'margin': '0 auto', 'display': 'block'}),
-        dcc.Graph(id='word-freq', figure=fig, config={'displaModeBar': False})
+        dcc.Graph(id='word-freq', figure=fig)
     ]
 
     return children
