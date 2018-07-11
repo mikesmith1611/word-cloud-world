@@ -29,12 +29,16 @@ body = Div([
                     style={'display': 'block', 'margin': '0 auto'})
             ], className=''),
             P("Welcome!", className="lead text-center"),
-            Hr(),
-            P("Explore random and user defined Wikipedia articles, song lyrics or create your own word cloud by cutting and pasting or by uploading a textfile!",
-              className="text-center"),
+            Hr()
         ], className='container')
     ], className="jumbotron jumbotron-fluid", style={'background-image': '/static/world.png'}),
     Div([
+        P("""Welcome to Word Cloud World! Word clouds are a creative way to visually represent textual data.
+             They allow you to see the most significant or frequent words used in any body of text.
+             Here at Word Cloud World we have created automated apps to visualise Wikipedia articles or Song lyrics.
+             You can also create your own word cloud by cutting and pasting text or by uploading a textfile!
+             You can customize your word cloud by changing its colour, shape and size.
+        """),
         H5('Some Inspiration'),
         Div([
             card('/static/wiki-word-cloud.png',

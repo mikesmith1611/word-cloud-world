@@ -16,7 +16,7 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
-        amazonMusicProduct
+        amazonMusicProduct,
         Div([
             Div('Lyrics Wordcloud', className='card-header'),
             Div([
@@ -38,6 +38,7 @@ body = Div([
             ], className='card-footer')
         ], className='card mt-3')
     ], className='container', id='container'),
+    footer
 ])
 
 

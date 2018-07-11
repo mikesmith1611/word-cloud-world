@@ -5,6 +5,7 @@ from wordcloud import WordCloud, ImageColorGenerator
 import io
 import base64
 from PIL import Image
+import plotly.graph_objs as go
 import re
 import numpy as np
 import requests
@@ -211,12 +212,21 @@ def make_word_cloud(imagemaskurl, relative_scaling, nwords, text, title,
     byte_io.seek(0)
     data_uri = base64.b64encode(byte_io.getvalue()).decode('utf-8').replace('\n', '')
     src = 'data:image/png;base64,{0}'.format(data_uri)
-
+    x = np.array(list(cloud.words_.keys()))
+    y = np.array(list(cloud.words_.values()))
+    order = np.argsort(y)[::-1]
+    x = x[order]
+    y = y[order]
+    trace = go.Bar(x=x, y=y)
+    layout = go.Layout(margin=go.Margin(l=10, r=00),
+                       title='Relative frequency of words/bigrams')
+    fig = go.Figure(data=[trace], layout=layout)
     children = [
         H2(title, className='card-title'),
         Img(src=src, width=image.size[0], height=image.size[1],
             style={'max-width': '100%', 'height': 'auto',
-                   'margin': '0 auto', 'display': 'block'})
+                   'margin': '0 auto', 'display': 'block'}),
+        dcc.Graph(id='word-freq', figure=fig, config={'displaModeBar': False})
     ]
 
     return children
@@ -225,4 +235,4 @@ footer = Div([
         Div([
             'This web app is powered by Dash and WordCloud.'
         ], className='container')
-    ], className='footer mt-5')
+    ], className='footer', style={'margin-top': 200})
