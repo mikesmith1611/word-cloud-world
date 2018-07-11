@@ -27,11 +27,11 @@ body = Div([
                 Div([
                     Div([
                         Div([Span('Artist', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='lyrics-artist', value='Kanye West', placeholder='Artist', className='form-control'),
+                        dcc.Input(id='lyrics-artist', value='Rick Astley', placeholder='Artist', className='form-control'),
                     ], className='col-sm-6 input-group mb-2'),
                     Div([
                         Div([Span('Song', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='lyrics-song', value='All falls down', placeholder='Song', className='form-control'),
+                        dcc.Input(id='lyrics-song', value='Never Gonna Give You Up', placeholder='Song', className='form-control'),
                     ], className='col-sm-6 input-group mb-2')
                 ], className='row'),
                 wordloud_controls('lyrics')
