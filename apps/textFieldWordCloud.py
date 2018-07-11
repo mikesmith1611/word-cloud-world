@@ -4,6 +4,7 @@ import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 from app import app
 from templates.wordcloud import make_word_cloud, footer
+from templates.amazonIframe import amazonMusicProduct
 import lorem
 
 body = Div([

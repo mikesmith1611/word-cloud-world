@@ -3,6 +3,7 @@ from templates.wordcloud import wordloud_controls
 import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 from templates.wordcloud import make_word_cloud, footer
+from templates.amazonIframe import amazonPrimeVideoProduct
 from app import app
 import wikipedia
 
@@ -15,6 +16,7 @@ body = Div([
                grab a random wikipedia article with the click of a button.')], className='lead container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
+        amazonPrimeVideoProduct,
         Div([
             Div('Wikipedia Wordcloud', className='card-header'),
             Div([

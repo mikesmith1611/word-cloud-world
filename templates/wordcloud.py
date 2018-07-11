@@ -8,6 +8,7 @@ from PIL import Image
 import re
 import numpy as np
 import requests
+from templates.amazonIframe import amazonMusicProduct
 
 
 instructions = """

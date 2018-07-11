@@ -1,7 +1,7 @@
 from dash_html_components import Div, Img, Button, H2, H1, H5, P, Hr, A, Span, Label
 import dash_core_components as dcc
 from templates.wordcloud import footer
-from templates.amazonIframe import amazonKindleRotating
+
 
 def card(img_src, title, text, btn_text, btn_href):
 

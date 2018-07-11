@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output, State
 from app import app
 from PyLyrics import PyLyrics
 from templates.wordcloud import remove_html_tags, make_word_cloud, footer
-from templates.amazonIframe import amazonMusicRotatingWide, amazonMusicRotatingNarrow
+from templates.amazonIframe import amazonMusicProduct 
 
 body = Div([
     Div([
@@ -16,7 +16,7 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
-        Div(id='amazonAd'),
+        Div([amazonMusicProduct]),
         Div([
             Div('Lyrics Wordcloud', className='card-header'),
             Div([
