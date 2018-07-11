@@ -1,6 +1,7 @@
 from dash_html_components import Div, Img, Button, H2, H1, H5, P, Hr, A, Span, Label
 import dash_core_components as dcc
 from templates.wordcloud import footer
+from templates.amazonIframe import amazonKindleRotating
 
 def card(img_src, title, text, btn_text, btn_href):
 
@@ -24,7 +25,7 @@ body = Div([
         Div([
             Div([
                 H1("Word Cloud World", className='display-4 text-center'),
-                Img(src="/static/world.png", width="200", height="200", alt="",
+                Img(src="/static/world.png", width="300", height="300", alt="",
                     style={'display': 'block', 'margin': '0 auto'})
             ], className=''),
             P("Welcome!", className="lead text-center"),
@@ -34,6 +35,7 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid", style={'background-image': '/static/world.png'}),
     Div([
+        amazonKindleRotating,
         H5('Some Inspiration'),
         Div([
             card('/static/wiki-word-cloud.png',

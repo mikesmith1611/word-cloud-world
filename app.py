@@ -15,12 +15,14 @@ class CustomDashIndex(Dash):
                 <meta charset="UTF-8">
                 <title>{}</title>
                 {}
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122175329-1"></script>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({{
-                    google_ad_client: "ca-pub-8733001003187835",
-                    enable_page_level_ads: true
-                }});
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-122175329-1');
                 </script>
             </head>
             <body>
@@ -47,6 +49,7 @@ app.css.append_css({'external_url': "/static/custom.css"})
 app.scripts.append_script({'external_url': "https://code.jquery.com/jquery-3.3.1.slim.min.js"})
 app.scripts.append_script({'external_url': "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"})
 app.scripts.append_script({'external_url': "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"})
+app.scripts.append_script({'external_url': "/static/custom.js"})
 
 app.config.suppress_callback_exceptions = True
 

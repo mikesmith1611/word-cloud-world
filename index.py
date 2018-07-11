@@ -7,6 +7,7 @@ from dash.dependencies import Output, Input, State
 from apps import wikipediaWordCloud, lyricsWordCloud, textFieldWordCloud, textUploadWordCloud, wordCloud
 from app import app
 from templates.wordcloud import footer
+
 server = app.server
 navbar = Div([
     Div(['Word Cloud World',
@@ -58,5 +59,7 @@ for i in ['custom-wiki', 'text-field', 'text-upload']:
     def update_href(children):
 
         return children[1]['props']['src']
+
+
 if __name__ == "__main__":
     app.run_server(host='0.0.0.0', debug=True)
