@@ -9,6 +9,7 @@ from templates.amazonIframe import amazonMusicProduct
 
 body = Div([
     Div([
+        amazonMusicProduct,
         Div([
             H1("Lyrics Word Cloud Generator", className='display-4'),
             Hr(),
@@ -16,7 +17,6 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
-        Div([amazonMusicProduct]),
         Div([
             Div('Lyrics Wordcloud', className='card-header'),
             Div([
@@ -38,7 +38,6 @@ body = Div([
             ], className='card-footer')
         ], className='card mt-3')
     ], className='container', id='container'),
-    footer
 ])
 
 

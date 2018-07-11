@@ -41,6 +41,7 @@ app.scripts.append_script({'external_url': "https://code.jquery.com/jquery-3.3.1
 app.scripts.append_script({'external_url': "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"})
 app.scripts.append_script({'external_url': "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"})
 app.scripts.append_script({'external_url': "/static/gtag.js"})
+app.scripts.append_script({'external_url': "//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=56696982-1493-48b1-8fb5-b7605de26a6d"})
 
 app.config.suppress_callback_exceptions = True
 
