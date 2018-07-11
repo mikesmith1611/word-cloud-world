@@ -35,7 +35,6 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid", style={'background-image': '/static/world.png'}),
     Div([
-        amazonKindleRotating,
         H5('Some Inspiration'),
         Div([
             card('/static/wiki-word-cloud.png',

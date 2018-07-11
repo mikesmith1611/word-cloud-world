@@ -15,15 +15,6 @@ class CustomDashIndex(Dash):
                 <meta charset="UTF-8">
                 <title>{}</title>
                 {}
-                <!-- Global site tag (gtag.js) - Google Analytics -->
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122175329-1"></script>
-                <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'UA-122175329-1');
-                </script>
             </head>
             <body>
                 <div id="react-entry-point">
@@ -49,7 +40,7 @@ app.css.append_css({'external_url': "/static/custom.css"})
 app.scripts.append_script({'external_url': "https://code.jquery.com/jquery-3.3.1.slim.min.js"})
 app.scripts.append_script({'external_url': "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"})
 app.scripts.append_script({'external_url': "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"})
-app.scripts.append_script({'external_url': "/static/custom.js"})
+app.scripts.append_script({'external_url': "/static/gtag.js"})
 
 app.config.suppress_callback_exceptions = True
 
