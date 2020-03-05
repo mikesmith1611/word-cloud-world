@@ -37,7 +37,7 @@ app.layout = Div([
 @app.callback(Output('body', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    print(pathname)
+
     if pathname is None or pathname == '/':
         return wordCloud.body
     if pathname.rstrip('/') == '/wordcloud/wikipedia':

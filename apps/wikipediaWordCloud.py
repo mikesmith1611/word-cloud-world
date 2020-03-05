@@ -16,13 +16,13 @@ body = Div([
                grab a random wikipedia article with the click of a button.')], className='lead container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
-        amazonPrimeVideoProduct,
+        # amazonPrimeVideoProduct,
         Div([
             Div('Wikipedia Wordcloud', className='card-header'),
-            Div([
+            dcc.Loading(Div([
                 H2('', className='card-title'),
                 Div([Img(src='', className='card-img-top', width='100%')], style={'height': 500}),
-            ], className='card-body', id='custom-wiki-wordcloud'),
+            ], className='card-body', id='custom-wiki-wordcloud'), style={'paddingTop': 200, 'paddingBottom': 200}, type='dot'),
             Div([
                 Div([
                     Div([
@@ -77,7 +77,7 @@ def update(n_clicks, imagemaskurl, relative_scaling, nwords, article,
            customstopwords, width, height, color, colormap, maxfont, minfont,
            scale):
     """Serves the logo image."""
-    print(imagemaskurl)
+
     if maxfont == 0:
         maxfont = None
     

@@ -9,6 +9,7 @@ import plotly.graph_objs as go
 import re
 import numpy as np
 import requests
+import dash_bootstrap_components as dbc
 from templates.amazonIframe import amazonMusicProduct
 
 
@@ -72,21 +73,21 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                 Div([
                     Div([
                         Div([Span('Width', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='{0}-width'.format(id_prefix), value=1000, inputmode='numeric', type='number', min=200, max=2000, className='form-control'),
+                        dcc.Input(id='{0}-width'.format(id_prefix), value=1000, inputMode='numeric', type='number', min=200, max=2000, className='form-control'),
 
                     ], className='input-group mb-2')
                 ], className='col-6 col-md-4 pr-1'),
                     Div([
                         Div([
                             Div([Span('Height', className='input-group-text')], className='input-group-prepend'),
-                            dcc.Input(id='{0}-height'.format(id_prefix), value=500, inputmode='numeric', type='number', min=200, max=2000, className='form-control'),
+                            dcc.Input(id='{0}-height'.format(id_prefix), value=500, inputMode='numeric', type='number', min=200, max=2000, className='form-control'),
 
                         ], className='input-group mb-2')
                     ], className='col-6 col-md-4 pl-1 pr-1'),
                     Div([
                         Div([
                             Div([Span('Scale', className='input-group-text')], className='input-group-prepend'),
-                            dcc.Input(id='{0}-scale'.format(id_prefix), value=1, inputmode='numeric', type='number', min=1, max=10, className='form-control'),
+                            dcc.Input(id='{0}-scale'.format(id_prefix), value=1, inputMode='numeric', type='number', min=1, max=10, className='form-control'),
                         ], className='input-group mb-2')
                     ], className='col-12 col-md-4 pl-1')
             ], className='row'),
@@ -96,13 +97,13 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                         Div([Span('Colorscale', className='input-group-text')], className='input-group-prepend'),
                         Div([
                             dcc.Dropdown(options=[{'label': i, 'value': i} for i in plt.colormaps()], value='viridis', id='{0}-colormap'.format(id_prefix), clearable=False)
-                        ], style={'padding': 0, 'border': 0, 'background-color': 'rgba(0,0,0,0)'}, id='{0}-colormap-container'.format(id_prefix), className='form-control')
+                        ], style={'padding': 0, 'border': 0, 'backgroundColor': 'rgba(0,0,0,0)'}, id='{0}-colormap-container'.format(id_prefix), className='form-control')
                     ], className='input-group mb-2')
                 ], className='col-lg-6 col-md-6'),
                 Div([
                     Div([
                         Div([Span('Background', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='{0}-background-color'.format(id_prefix), value='#ffffff', type='color', inputmode='numeric', className='form-control', style={'padding': 0, 'height': 38})
+                        dbc.Input(id='{0}-background-color'.format(id_prefix), value='#ffffff', type='color', className='form-control', style={'padding': 0, 'height': 38})
                     ], className='input-group mb-2'),
                 ], className='col-lg-6 col-md-6'),
             ], className='row')
@@ -112,13 +113,13 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                 Div([
                     Div([
                         Div([Span('Max font', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='{0}-max-font'.format(id_prefix), value=0, inputmode='numeric', type='number', min=0, max=100, className='form-control'),
+                        dcc.Input(id='{0}-max-font'.format(id_prefix), value=0, inputMode='numeric', type='number', min=0, max=100, className='form-control'),
                     ], className='input-group mb-2')
                 ], className='col-6'),
                     Div([
                         Div([
                             Div([Span('Min font', className='input-group-text')], className='input-group-prepend'),
-                            dcc.Input(id='{0}-min-font'.format(id_prefix), value=min_font_size, inputmode='numeric', type='number', min=1, max=100, className='form-control'),
+                            dcc.Input(id='{0}-min-font'.format(id_prefix), value=min_font_size, inputMode='numeric', type='number', min=1, max=100, className='form-control'),
                         ], className='input-group mb-2')
                     ], className='col-6')
             ], className='row'),
@@ -126,13 +127,14 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                 Div([
                     Div([
                         Div([Span('Frq/Rnk', className='input-group-text')], className='input-group-prepend'),
-                        Div([dcc.Slider(id='{0}-scaling'.format(id_prefix), value=0.5, min=0, max=1, step=0.01, marks={0: '0', 1: '1'})], className='form-control pb-0'),
+                        dcc.Input(id='{0}-scaling'.format(id_prefix), value=0.5, min=0, max=1, step=0.01, inputMode='numeric', type='number',
+                        className='form-control pb-0'),
                     ], className='input-group mb-2')
                 ], className='col-lg-6 col-md-6'),
                 Div([
                     Div([
                         Div([Span('Max Words', className='input-group-text')], className='input-group-prepend'),
-                        dcc.Input(id='{0}-nwords'.format(id_prefix), value=200, inputmode='numeric', type='number', min=10, max=500, step=10, className='form-control'),
+                        dcc.Input(id='{0}-nwords'.format(id_prefix), value=200, inputMode='numeric', type='number', min=10, max=500, step=10, className='form-control'),
                     ], className='input-group mb-2')
                 ], className='col-lg-6 col-md-6')
             ], className='row'),
@@ -141,7 +143,7 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                     Div([
                         Div([Span('Mask URL', className='input-group-text')], className='input-group-prepend'),
                         dcc.Input(id='{0}-image-mask-url'.format(id_prefix), value=default_mask,
-                        inputmode='text', type='search', className='form-control'),
+                        inputMode='url', type='search', className='form-control'),
                     ], className='input-group mb-2')
                 ], className='col-lg-8 col-md-6'),
                 Div([
@@ -206,7 +208,6 @@ def make_word_cloud(imagemaskurl, relative_scaling, nwords, text, title,
         pass
     image = cloud.to_image()
 
-    print(image.size)
     byte_io = io.BytesIO()
     image.save(byte_io, 'PNG')
     byte_io.seek(0)
@@ -224,7 +225,7 @@ def make_word_cloud(imagemaskurl, relative_scaling, nwords, text, title,
     children = [
         H2(title, className='card-title'),
         Img(src=src, width=image.size[0], height=image.size[1],
-            style={'max-width': '100%', 'height': 'auto',
+            style={'maxWidth': '100%', 'height': 'auto',
                    'margin': '0 auto', 'display': 'block'}),
         dcc.Graph(id='word-freq', figure=fig, config={'displayModeBar': False})
     ]
@@ -235,4 +236,4 @@ footer = Div([
         Div([
             'This web app is powered by Dash and WordCloud.'
         ], className='container')
-    ], className='footer', style={'margin-top': 200})
+    ], className='footer', style={'marginTop': 200})

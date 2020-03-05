@@ -18,10 +18,10 @@ body = Div([
     Div([
         Div([
             Div('Text Field Wordcloud', className='card-header'),
-            Div([
+            dcc.Loading(Div([
                 H2('', className='card-title'),
                 Div([Img(src='', className='card-img-top', width='100%')], style={'height': 500}),
-            ], className='card-body', id='text-field-wordcloud'),
+            ], className='card-body', id='text-field-wordcloud'), style={'paddingTop': 200, 'paddingBottom': 200}, type='dot'),
             Div([
                 P('This is the text field word cloud generator. Simply copy and paste the text into the box below.'),
                 Div([

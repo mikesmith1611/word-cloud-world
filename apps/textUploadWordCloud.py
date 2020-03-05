@@ -16,10 +16,10 @@ body = Div([
     Div([
         Div([
             Div('Text Upload Wordcloud', className='card-header'),
-            Div([
+            dcc.Loading(Div([
                 H2('', className='card-title'),
                 Div([Img(src='', className='card-img-top', width='100%')], style={'height': 500}),
-            ], className='card-body', id='text-upload-wordcloud'),
+            ], className='card-body', id='text-upload-wordcloud'), style={'paddingTop': 200, 'paddingBottom': 200}, type='dot'),
             Div([
                 Div([
                     Div([

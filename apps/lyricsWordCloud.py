@@ -16,13 +16,13 @@ body = Div([
         ], className='container')
     ], className="jumbotron jumbotron-fluid"),
     Div([
-        amazonMusicProduct,
+        # amazonMusicProduct,
         Div([
             Div('Lyrics Wordcloud', className='card-header'),
-            Div([
+            dcc.Loading(Div([
                 H2('', className='card-title'),
                 Div([Img(src='', className='card-img-top', width='100%')], style={'height': 500})
-            ], className='card-body', id='lyrics-wordcloud'),
+            ], className='card-body', id='lyrics-wordcloud'), style={'paddingTop': 200, 'paddingBottom': 200}, type='dot'),
             Div([
                 Div([
                     Div([
