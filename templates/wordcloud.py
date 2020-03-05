@@ -75,20 +75,20 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                         dcc.Input(id='{0}-width'.format(id_prefix), value=1000, inputmode='numeric', type='number', min=200, max=2000, className='form-control'),
 
                     ], className='input-group mb-2')
-                ], className='col-6 col-md-4'),
+                ], className='col-6 col-md-4 pr-1'),
                     Div([
                         Div([
                             Div([Span('Height', className='input-group-text')], className='input-group-prepend'),
                             dcc.Input(id='{0}-height'.format(id_prefix), value=500, inputmode='numeric', type='number', min=200, max=2000, className='form-control'),
 
                         ], className='input-group mb-2')
-                    ], className='col-6 col-md-4'),
+                    ], className='col-6 col-md-4 pl-1 pr-1'),
                     Div([
                         Div([
                             Div([Span('Scale', className='input-group-text')], className='input-group-prepend'),
                             dcc.Input(id='{0}-scale'.format(id_prefix), value=1, inputmode='numeric', type='number', min=1, max=10, className='form-control'),
                         ], className='input-group mb-2')
-                    ], className='col-12 col-md-4')
+                    ], className='col-12 col-md-4 pl-1')
             ], className='row'),
             Div([
                 Div([
@@ -145,7 +145,7 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                     ], className='input-group mb-2')
                 ], className='col-lg-8 col-md-6'),
                 Div([
-                    Button('Generate', className="btn btn-success", n_clicks=1, id='{0}-generate-wordcloud'.format(id_prefix))
+                    Button('Build', className="btn btn-success", n_clicks=1, id='{0}-generate-wordcloud'.format(id_prefix))
                 ], className='col-lg-2 col-md-2 mb-2'),
                 Div([
                     A('Save', download='wordcloud.png', href="", target="_blank", className="btn btn-primary", id='{0}-save-wordcloud'.format(id_prefix))
