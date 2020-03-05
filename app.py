@@ -13,7 +13,7 @@ class CustomDashIndex(Dash):
         <html>
             <head>
                 <meta charset="UTF-8">
-                <meta property="og:image" content="/static/wiki-word-cloud.png">
+                <meta property="og:image" content="www.wordcloudworld.com/static/wiki-word-cloud.png">
                 <title>{}</title>
                 {}
             </head>
