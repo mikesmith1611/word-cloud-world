@@ -65,6 +65,11 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
         Div([
             Div([
                 Div([
+                    Button('Build', className="btn btn-success", n_clicks=1, id='{0}-generate-wordcloud'.format(id_prefix), style={'width': '100%'})
+                ], className='col mb-2')
+            ], className='row'),
+            Div([
+                Div([
                     Div([Span('Stop Words', className='input-group-text')], className='input-group-prepend'),
                     dcc.Input(id='{0}-stopwords'.format(id_prefix), value='show,episode,season,series,episodes,time,first,character,characters', placeholder='Stop Words (,)', className='form-control')
                 ], className='col input-group mb-2')
@@ -75,29 +80,22 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                         Div([Span('Width', className='input-group-text')], className='input-group-prepend'),
                         dcc.Input(id='{0}-width'.format(id_prefix), value=1000, inputMode='numeric', type='number', min=200, max=2000, className='form-control'),
 
-                    ], className='input-group mb-2')
-                ], className='col-6 col-md-4 pr-1'),
+                    ], className='input-group mb-2 pr-0 pl-0')
+                ], className='col-12 col-md-6'),
                     Div([
                         Div([
                             Div([Span('Height', className='input-group-text')], className='input-group-prepend'),
                             dcc.Input(id='{0}-height'.format(id_prefix), value=500, inputMode='numeric', type='number', min=200, max=2000, className='form-control'),
 
-                        ], className='input-group mb-2')
-                    ], className='col-6 col-md-4 pl-1 pr-1'),
-                    Div([
-                        Div([
-                            Div([Span('Scale', className='input-group-text')], className='input-group-prepend'),
-                            dcc.Input(id='{0}-scale'.format(id_prefix), value=1, inputMode='numeric', type='number', min=1, max=10, className='form-control'),
-                        ], className='input-group mb-2')
-                    ], className='col-12 col-md-4 pl-1')
+                        ], className='input-group mb-2 pr-0 pl-0')
+                    ], className='col-12 col-md-6'),
+
             ], className='row'),
             Div([
                 Div([
                     Div([
                         Div([Span('Colorscale', className='input-group-text')], className='input-group-prepend'),
-                        Div([
-                            dcc.Dropdown(options=[{'label': i, 'value': i} for i in plt.colormaps()], value='viridis', id='{0}-colormap'.format(id_prefix), clearable=False)
-                        ], style={'padding': 0, 'border': 0, 'backgroundColor': 'rgba(0,0,0,0)'}, id='{0}-colormap-container'.format(id_prefix), className='form-control')
+                        dbc.Select(options=[{'label': i, 'value': i} for i in plt.colormaps()], value='viridis', id='{0}-colormap'.format(id_prefix), className='form-control')
                     ], className='input-group mb-2')
                 ], className='col-lg-6 col-md-6'),
                 Div([
@@ -145,13 +143,19 @@ def wordloud_controls(id_prefix, default_mask=None, min_font_size=4):
                         dcc.Input(id='{0}-image-mask-url'.format(id_prefix), value=default_mask,
                         inputMode='url', type='search', className='form-control'),
                     ], className='input-group mb-2')
-                ], className='col-lg-8 col-md-6'),
+                ], className='col-lg-12 col-md-12'),
+
+            ], className='row'),
+            Div([
                 Div([
-                    Button('Build', className="btn btn-success", n_clicks=1, id='{0}-generate-wordcloud'.format(id_prefix))
-                ], className='col-lg-2 col-md-2 mb-2'),
+                    Div([
+                        Div([Span('Scale', className='input-group-text')], className='input-group-prepend'),
+                        dcc.Input(id='{0}-scale'.format(id_prefix), value=1, inputMode='numeric', type='number', min=1, max=10, className='form-control'),
+                    ], className='input-group mb-2 pr-0 pl-0')
+                ], className='col-12 col-md-6'),
                 Div([
-                    A('Save', download='wordcloud.png', href="", target="_blank", className="btn btn-primary", id='{0}-save-wordcloud'.format(id_prefix))
-                ], className='col-lg-2 col-md-2 mb-2')
+                    A('Save', download='wordcloud.png', href="", target="_blank", className="btn btn-primary", id='{0}-save-wordcloud'.format(id_prefix), style={'width': '100%'})
+                ], className='col-md-6 mb-2')
             ], className='row')
         ], className='col-lg-6'),
         Div([
@@ -227,7 +231,10 @@ def make_word_cloud(imagemaskurl, relative_scaling, nwords, text, title,
         Img(src=src, width=image.size[0], height=image.size[1],
             style={'maxWidth': '100%', 'height': 'auto',
                    'margin': '0 auto', 'display': 'block'}),
-        dcc.Graph(id='word-freq', figure=fig, config={'displayModeBar': False})
+        # Details([
+        #     Summary('View Frequency Plot'),
+        #     dcc.Graph(id='word-freq', figure=fig, config={'displayModeBar': False})
+        # ])
     ]
 
     return children
