@@ -31,7 +31,7 @@ matplotlib==3.2.0
 nbformat==5.0.4
 numpy==1.18.1
 olefile==0.46
-Pillow==7.0.0
+Pillow==9.0.0
 plotly==2.2.3
 PyLyrics==1.1.0
 pyparsing==2.4.6
